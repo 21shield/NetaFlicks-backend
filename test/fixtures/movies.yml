@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  director: MyString
+  release_date: MyString
+  description: MyText
+  thumbs_up: 1
+  thumbs_down: 1
+  poster: MyString
+
+two:
+  title: MyString
+  director: MyString
+  release_date: MyString
+  description: MyText
+  thumbs_up: 1
+  thumbs_down: 1
+  poster: MyString

@@ -15,7 +15,7 @@ gem 'puma', '~> 4.1'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'rest-client', '~> 2.0', '>= 2.0.2'
+gem 'rest-client', '~> 2.1'
 gem "active_model_serializers", "~> 0.10.10"
 gem 'dotenv-rails'
 # Use Active Storage variant

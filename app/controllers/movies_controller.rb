@@ -9,12 +9,20 @@ class MoviesController < ApplicationController
         render json: data["results"]
     end
 
-    def update
-        byebug
+    def updateMovie
+         movie = Movie.findMovie(updateMovie_params[:id])
+         byebug
+
+        #  get info back from  api
+        # create movie/ update
+        # return that movie with updated counts
     end
 
 
     private
+    def updateMovie_params
+        params.permit(:id, :value)
+    end
 
     def search_params
         params.permit(:search_term)

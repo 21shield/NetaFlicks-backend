@@ -18,16 +18,34 @@ class Movie < ApplicationRecord
     end
 
     def self.topMovies()
-        # request info from db with the imbd id of the movie that was clicked on 
         # if voted up or down save to db
-        data = RestClient.get('https://api.themoviedb.org/3/movie/popular', {params: {
+        data = RestClient.get('https://api.themoviedb.org/3/movie/popular', {
+            params: {
             api_key: "#{ENV["TMBD_API_KEY"]}",
             language: "en-US",
             page: 1,
         }})
+        # byebug
 
         JSON.parse(data)
 
+    end
+
+    def self.findMovie(id)
+        # makes a request to the database to  get info from the specific id to the movie
+        # returns this info to be be found/ created
+        search ={
+            api_key: "#{ENV["TMBD_API_KEY"]}",
+            language: "en-US",
+            movie_id: id.to_i,
+        }
+        movie_info = RestClient.get('https://api.themoviedb.org/3/movie/', {
+            params: search
+        })
+        byebug
+
+
+        JSON.parse(movie_info)
     end
 
     

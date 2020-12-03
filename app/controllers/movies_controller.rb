@@ -3,6 +3,18 @@ class MoviesController < ApplicationController
         movies = Movie.topMovies()
         render json: movies["results"]
     end
+
+    def show
+
+        movie = Movie.find_by(movieId: movie_params["id"] )
+        if movie
+            render json: {movie: MovieSerializer.new(movie)}
+
+        else
+            movieApi = Movie.findMovie(movie_params[:id])
+            render json: movieApi
+        end
+    end
     
     def search_movies
          data = Movie.getMovies(movie_params)
@@ -16,10 +28,11 @@ class MoviesController < ApplicationController
         if !!update_mov
             movie_params[:value] ? (update_mov.thumbs_up +=1) : (update_mov.thumbs_down += 1)
             update_mov.save
-            render json:{ movie: MovieSerializer.new(update_mov)}
+            render json: {movie: MovieSerializer.new(update_mov)}
         else
             render json: {error: "Unable to find movie in the database." }, status: :bad_request
         end 
+    
     end
 
 

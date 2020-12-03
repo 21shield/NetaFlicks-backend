@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2020_12_01_040204) do
     t.string "director"
     t.string "release_date"
     t.text "description"
-    t.integer "thumbs_up"
-    t.integer "thumbs_down"
+    t.integer "thumbs_up", default: 0
+    t.integer "thumbs_down", default: 0
     t.string "poster"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -11,21 +11,23 @@ class MoviesController < ApplicationController
 
     def create
         movie = Movie.findMovie(movie_params[:id])
-        # create movie/ update
         update_mov = Movie.find_or_create_by(movie)
-        # return that movie with updated counts
-        byebug
-        render json: movie
+
+        if !!update_mov
+            movie_params[:value] ? (update_mov.thumbs_up +=1) : (update_mov.thumbs_down += 1)
+            update_mov.save
+            render json:{ movie: MovieSerializer.new(update_mov)}
+        else
+            render json: {error: "Unable to find movie in the database." }, status: :bad_request
+        end 
     end
 
 
     private
-    # def updateMovie_params
-    #     params.permit(:id, :value)
-    # end
 
     def movie_params
         params.permit(:search_term, :id, :value, movie:[:id])
     end
+
 end
 

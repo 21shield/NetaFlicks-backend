@@ -4,9 +4,9 @@
 
 **NetaFlicks** is a movie database query that allows users to like and dislike films. 
 
-This is the Rails Backend API for **FLicks**. 
+This is the Rails Backend API for **NetaFlicks**. 
 
-You can access the FLIX Frontend [here](https://github.com/21shield/NetaFlick_frontend).
+You can access the NetaFlicks Frontend [here](https://github.com/21shield/NetaFlick_frontend).
 
 
 ## Prerequisites

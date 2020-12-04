@@ -21,7 +21,8 @@ class MoviesController < ApplicationController
         render json: data["results"]
     end
 
-    def create
+    def update
+
         movie = Movie.findMovie(movie_params[:id])
         update_mov = Movie.find_or_create_by(movie)
 

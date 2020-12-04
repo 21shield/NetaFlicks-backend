@@ -5,11 +5,9 @@ class MoviesController < ApplicationController
     end
 
     def show
-
         movie = Movie.find_by(movieId: movie_params["id"] )
         if movie
             render json: {movie: MovieSerializer.new(movie)}
-
         else
             movieApi = Movie.findMovie(movie_params[:id])
             render json: {movie: movieApi}
@@ -27,7 +25,7 @@ class MoviesController < ApplicationController
         update_mov = Movie.find_or_create_by(movie)
 
         if !!update_mov
-            movie_params[:value] ? (update_mov.thumbs_up +=1) : (update_mov.thumbs_down += 1)
+            movie_params[:value] != "false" ? (update_mov.thumbs_up +=1) : (update_mov.thumbs_down += 1)
             update_mov.save
             render json: {movie: MovieSerializer.new(update_mov)}
         else

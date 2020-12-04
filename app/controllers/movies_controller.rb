@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
 
         else
             movieApi = Movie.findMovie(movie_params[:id])
-            render json: movieApi
+            render json: {movie: movieApi}
         end
     end
     

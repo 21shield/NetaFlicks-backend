@@ -55,7 +55,7 @@ class Movie < ApplicationRecord
             title: movObj["original_title"],
             director: director,
             release_date: movObj["release_date"].split("-")[0],
-            description: movObj["overview"],
+            overview: movObj["overview"],
             poster: movObj["poster_path"],
         }
     end

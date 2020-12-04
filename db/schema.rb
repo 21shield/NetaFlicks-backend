@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_040204) do
     t.string "title"
     t.string "director"
     t.string "release_date"
-    t.text "description"
+    t.text "overview"
     t.integer "thumbs_up", default: 0
     t.integer "thumbs_down", default: 0
     t.string "poster"

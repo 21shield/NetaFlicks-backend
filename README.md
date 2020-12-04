@@ -2,7 +2,7 @@
 
 # NetaFlicks Backend API
 
-**NetaFlicks** is a movie database query that allows users to like and dislike films. 
+**NetaFlicks** is a movie web application that allows users to search and vote on movies.
 
 This is the Rails Backend API for **NetaFlicks**. 
 
@@ -52,7 +52,7 @@ You can access the NetaFlicks Frontend [here](https://github.com/21shield/NetaFl
     ```
 
 ## Initial Configuration
-**FLIX** is uses an external API for querying data and will NOT work without the following steps. 
+**NetaFlicks** uses an external API for querying data and will NOT work without the following steps. 
 
 1. Obtain a key for The Movie Database API:
     * https://developers.themoviedb.org/3/
